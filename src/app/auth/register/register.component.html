@@ -1,0 +1,33 @@
+<div id="register-container">
+<form #f="ngForm" ngNativeValidate (ngSubmit)="onSubmit(f)" id="register">
+  <h1 class="text-center">Code-Pal</h1>
+  <mdb-form-control class="m-2">
+    <input ngModel  mdbInput name="username" type="text" class="form-control"
+    id="usernameInput" aria-describedby="emailHelp" required>
+    <label mdbLabel class="form-label" for="typeText">Username</label>
+  </mdb-form-control>
+  <mdb-form-control class="m-2">
+    <input ngModel  mdbInput name="email" type="email" class="form-control"
+    id="emailInput" aria-describedby="emailHelp" required>
+    <label mdbLabel class="form-label" for="typeText">Email</label>
+  </mdb-form-control>
+  <mdb-form-control class="m-2">
+    <input ngModel mdbInput name="password" type="password" placeholder="Password" class="form-control"
+    id="loginPasswordInput" required>
+    <label mdbLabel class="form-label" for="typeText">Password</label>
+  </mdb-form-control>
+  <div class="modal-footer" id="buttons">
+    <button type="button" class="btn btn-primary" [routerLink]="['/login']">Sign In</button>
+    <button id="accedi_btn" type="submit" class="btn btn-success">Sign Up</button>
+  </div>
+  <p class="text-center fs-5">{{error}}</p>
+</form>
+</div>
+
+
+
+    <!-- <input #ruolo type="text" placeholder="prova" aria-label="disabled input example" disabled>
+    <label class="form-label" for="ruolo"></label>
+    <ng-template id="ruolo">
+      <p value="ROLE_USER" name="roles"></p>
+    </ng-template> -->

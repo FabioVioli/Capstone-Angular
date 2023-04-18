@@ -1,0 +1,27 @@
+<div id="contenitore">
+<div id="container">
+  <div id="user-info" class="container mt-3">
+    <p *ngIf="user" class="d-flex justify-content-between align-items-center">
+      <span class="fs-2">{{ user.username }}</span>
+      <span class="fs-4">{{ user.email }}</span>
+    </p>
+  </div>
+    <h3 class="ms-3">Private Messages</h3>
+  <div id="messages">
+    <div *ngFor="let dm of dmList">
+      <div
+        id="dm"
+        class="d-flex justify-content-between align-items-center ps-3"
+      >
+        <div>
+          <h6>From: {{ dm.sender.username }}</h6>
+          <p>{{ dm.body }}</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-trash me-3" (click)="deleteDM(dm.id)"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,46 @@
+#contenitore{
+  height: 100%;
+  display: flex;
+}
+
+#container{
+  margin: auto;
+  width: 50%;
+  border: 1px solid rgb(182, 182, 182);
+  height: 500px;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+
+#messages{
+  max-height:70%;
+  overflow:auto;
+  border:1px solid red;
+}
+
+#dm{
+  border: 1px solid rgb(182, 182, 182);
+  background-color: rgb(243, 243, 243);
+  margin-bottom: 5px;
+  p{
+    margin-bottom: 0;
+  }
+}
+
+// SMARTPHONE
+@media only screen and (max-width: 768px) {
+  #container{
+    width: 100%;
+
+  }
+}
+@media only screen and (max-width: 768px) {
+  #container{
+    width: 100%;
+
+  }
+}
+

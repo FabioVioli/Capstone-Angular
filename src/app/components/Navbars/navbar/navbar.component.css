@@ -1,0 +1,47 @@
+nav {
+  height: 5vh;
+}
+
+#navbarNav {
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 425px) {
+  nav {
+    height: 10vh;
+  }
+  #navbar {
+    display: flex;
+    flex-direction: column;
+  }
+  #navbar #nabar-links {
+    margin-bottom: 10px;
+  }
+  #navbar #nabar-links #navbar-ul li i {
+    margin: 0;
+    margin-right: 30px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .nav-item {
+    font-size: 1.5em;
+    margin-left: 25px;
+    cursor: pointer;
+  }
+  #nabar-search {
+    display: flex;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #nabar-search {
+    display: flex;
+  }
+  .nav-item {
+    margin-left: 10px;
+  }
+}/*# sourceMappingURL=navbar.component.css.map */

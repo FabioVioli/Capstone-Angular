@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand bg-body-tertiary p-0" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']">CODE-PAL</a>
+          <ng-container *ngIf="isLoggedIn()">
+            <button type="button"class="btn btn-outline-primary d-md-none me-0" [routerLink]="['/login']" (click)="logout()">Logout</button>
+            </ng-container>
+            <ng-container *ngIf="!isLoggedIn()">
+              <button type="button"class="btn btn-success" [routerLink]="['/login']">Sign In</button>
+            </ng-container>
+  </div>
+</nav>

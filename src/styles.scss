@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+@import '@fortawesome/fontawesome-free/scss/regular.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+
+.clienti-page {
+    height: 100%;
+    background-color: royalblue;
+}
+.card{
+  box-shadow: 12px 13px 24px 1px #000000;
+}

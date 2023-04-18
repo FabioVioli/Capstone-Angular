@@ -1,0 +1,117 @@
+#new-post{
+  width: 80%;
+  min-height: 100%;
+  margin: auto;
+  margin-top: 20px;
+  padding-top: 25px;
+  border: 1px solid rgb(207, 207, 207);
+
+}
+
+#skills{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  div{
+    display: flex;
+
+  }
+}
+
+#create-post-button{
+  width: 100px;
+}
+
+
+
+// SMARTPHONE
+@media only screen and (max-width: 425px) {
+  #new-post{
+    padding: 0 10px;
+    min-width: 98%;
+    min-height: 95%;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid rgb(207, 207, 207);
+
+  }
+  #body{
+    height: 310px;
+
+  }
+  .form-check{
+    margin-left: 10px;
+  }
+
+  #skills{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    div{
+      display: flex;
+
+      font-size: 0.7em;
+    }
+  }
+
+
+}
+// TABLET
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+
+  #new-post{
+    padding: 20px;
+    width: 600px;
+    min-height: 100%;
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 25px;
+    border: 1px solid rgb(207, 207, 207);
+
+  }
+  #body{
+    height: 360px;
+
+  }
+
+  #skills{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    div{
+      display: flex;
+
+      font-size: 0.7em;
+    }
+  }
+
+  #create-post-button{
+    width: 100px;
+
+  }
+  .form-check{
+    margin-left: 10px;
+  }
+}
+// DESKTOP
+@media only screen and (min-width: 1024px) {
+
+  #new-post{
+    padding: 20px;
+    width: 800px;
+    max-height: 80%;
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 25px;
+    border: 1px solid rgb(207, 207, 207);
+  }
+
+  #body{
+    height: 380px;
+
+  }
+
+  .form-check{
+    margin-left: 10px;
+  }
+}

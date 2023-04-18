@@ -1,0 +1,19 @@
+#register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 230px;
+  align-self: center;
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-evenly;
+}/*# sourceMappingURL=register.component.css.map */

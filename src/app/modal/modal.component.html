@@ -1,0 +1,11 @@
+<div class="modal-header d-flex flex-column">
+  <h5 class="modal-title" id="exampleModalLabel">Write your message</h5>
+  <textarea style="width: 450px; font-size: 0.9em; max-width: 100%;" [(ngModel)]="textArea"></textarea>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modalRef.close()" >
+    Back
+  </button>
+  <button type="button" class="btn btn-primary" (click)="sendDm()">Send</button>
+</div>

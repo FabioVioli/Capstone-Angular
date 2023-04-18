@@ -1,0 +1,18 @@
+<div class="d-flex align-items-center flex-column">
+  <div id="annuncio">
+    <h6 >{{lfp.user?.username}}</h6>
+    <p class="m-0">Date: {{lfp.creationDate | date: 'd/M/yy - h:mm a'}}</p>
+    <h5>{{lfp.title}}</h5>
+    <p class="m-0" *ngIf="lfp.creationDate != lfp.lastModifyDate">Last Modify: {{lfp.lastModifyDate | date: 'd/M/yy - h:mm a'}}</p>
+    <hr>
+    <h5 *ngFor="let skill of lfp.skills">{{skill}} </h5>
+    <hr>
+    <p>{{lfp.body}}</p>
+    <div id="buttons">
+    <button type="button" class="btn btn-danger" (click)="deletePost()" *ngIf="!check()">Del</button>
+    <button type="button" class="btn btn-warning" (click)="editPost(lfp)" *ngIf="!check()">Edit</button>
+    <button type="button" class="btn btn-success" *ngIf="checkStatus()" (click)="openModal()">DM</button>
+    <button type="button" class="btn btn-primary" [routerLink]="['/lfp']">Back</button>
+    </div>
+  </div>
+</div>

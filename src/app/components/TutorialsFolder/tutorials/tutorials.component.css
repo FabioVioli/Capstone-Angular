@@ -1,0 +1,53 @@
+#tutorials-table {
+  height: 100%;
+  overflow: auto;
+}
+
+#tutorials-table::-webkit-scrollbar {
+  display: none;
+}
+
+#post {
+  cursor: pointer;
+}
+
+#title-paragraph {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+td {
+  border-bottom: none;
+}
+
+tr {
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+@media only screen and (max-width: 425px) {
+  #table-post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .table-remove {
+    display: none;
+  }
+}
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  #userBar {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #title-paragraph {
+    max-width: 350px;
+  }
+  #userBar {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+}/*# sourceMappingURL=tutorials.component.css.map */

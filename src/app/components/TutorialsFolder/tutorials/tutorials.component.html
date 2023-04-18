@@ -1,0 +1,47 @@
+<div id="tutorials-table">
+  <table class="table align-middle mb-0 bg-white container" >
+    <thead class="bg-light">
+      <tr>
+        <th id="table-post">Post <button type="button" class="btn btn-primary d-md-none" [routerLink]="['/tutorial-post']">New</button></th>
+        <th class="table-remove">Skills</th>
+        <th class="table-remove">Last Modify</th>
+        <th class="text-end table-remove"><button type="button" class="btn btn-primary" [routerLink]="['/tutorial-post']">New</button></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let tutorial of tutorialsList">
+      <tr>
+        <td>
+          <div class="d-flex align-items-center" (click)="openPost(tutorial.id)" id="post">
+            <div>
+              <p id="title-paragraph" class="fw-bold mb-1">{{tutorial.title}}</p>
+              <p class="text-muted mb-0">{{tutorial.user.username}}</p>
+            </div>
+          </div>
+        </td>
+        <td class="table-remove">
+          <span class="fw-normal mb-1 p-0" *ngFor="let tag of tutorial.skills, let i = index">{{tag}}, </span>
+        </td>
+        <td class="table-remove">
+          <p class="m-0">{{tutorial.lastModifyDate | date: 'd/M/yy'}}</p>
+          <p class="m-0">{{tutorial.lastModifyDate | date: 'h:mm a'}}</p>
+        </td>
+        <td *ngIf="editPanelCheck(tutorial.user.username)" class="table-remove">
+          <div id="userBar">
+          <!-- EDIT POST -->
+          <button type="button" class="btn btn-link btn-sm btn-rounded d-block" (click)="editPost(tutorial.id)">
+            Edit
+          </button>
+          <!-- DELETE POST-->
+          <button type="button" class="btn btn-link btn-sm btn-rounded d-block" data-mdb-toggle="modal" (click)="deletePost(tutorial.id)">
+            Delete
+          </button>
+        </div>
+        </td>
+        <td class="text-end table-remove" *ngIf="!editPanelCheck(tutorial.user.username)">
+          <button type="button" class="btn btn-outline-primary" (click)="openPost(tutorial.id)" >Read</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>

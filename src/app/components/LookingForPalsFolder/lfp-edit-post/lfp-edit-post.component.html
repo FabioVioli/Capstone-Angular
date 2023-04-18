@@ -1,0 +1,28 @@
+<div id="new-post">
+  <!-- Name input -->
+  <h6>Titolo</h6>
+  <div>
+    <input type="text" class="form-control" name="titolo" [(ngModel)]="lfp.title"/>
+  </div>
+    <!-- Checkbox -->
+  <h6>Skills</h6>
+  <div id="skills">
+    <div class="form-check" *ngFor="let skill of skillsList" >
+      <input class="form-check-input" type="checkbox" id={{skill}} (click)="toggle(skill)"/>
+      <label class="form-check-label" for={{skill}}>
+        {{skill}}
+      </label>
+  </div>
+  </div>
+  <!-- Message input -->
+  <h6>Annuncio</h6>
+  <div>
+    <textarea class="form-control" name="annuncio" [(ngModel)]="lfp.body" id="body"></textarea>
+  </div>
+
+  <!-- Submit button -->
+  <div class="d-flex flex-row-reverse">
+    <button type="submit" class="btn btn-success btn-block mx-2 mt-3" id="create-post-button" (click)="editPost(lfp)" >Update</button>
+  <button type="button" class="btn btn-primary mx-2 mt-3" [routerLink]="['/lfp']">Back</button>
+  </div>
+</div>

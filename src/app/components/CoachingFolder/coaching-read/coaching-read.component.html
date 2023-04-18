@@ -1,0 +1,18 @@
+<div class="d-flex align-items-center flex-column">
+  <div id="annuncio">
+    <h6 >{{coaching.user?.username}}</h6>
+    <p class="m-0">Date: {{coaching.creationDate | date: 'd/M/yy - h:mm a'}}</p>
+    <h5>{{coaching.title}}</h5>
+    <p class="m-0" *ngIf="coaching.creationDate != coaching.lastModifyDate">Last Modify: {{coaching.lastModifyDate | date: 'd/M/yy - h:mm a'}}</p>
+    <hr>
+    <h5 *ngFor="let skill of coaching.skills">{{skill}} </h5>
+    <hr>
+    <p>{{coaching.body}}</p>
+    <div id="buttons">
+    <button type="button" class="btn btn-danger" (click)="deletePost()" *ngIf="!check()">Del</button>
+    <button type="button" class="btn btn-warning" (click)="editPost()" *ngIf="!check()">Edit</button>
+    <button type="button" class="btn btn-success" *ngIf=" check()" (click)="openModal()">DM</button>
+    <button type="button" class="btn btn-primary" [routerLink]="['/coachings']">Back</button>
+    </div>
+  </div>
+</div>

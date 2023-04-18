@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand bg-body-tertiary p-0" >
+  <div class="container-fluid" id="navbar">
+    <div id="nabar-links">
+      <ul class="navbar-nav me-auto mb-0 mb-lg-0" id="navbar-ul">
+        <a class="navbar-brand d-none d-md-inline me-0" [routerLink]="['/home']">CODE-PAL</a>
+        <li class="nav-item d-flex justify-content-between align-items-center" [routerLink]="['/lfp']">
+          <i class="fa-solid fa-people-group text-primary"></i> <a class="nav-link d-flex align-items-center d-none d-lg-block" >Looking for Pal</a>
+        </li>
+        <li class="nav-item d-flex justify-content-between align-items-center" [routerLink]="['/tutorials']">
+          <i class="fa-sharp fa-solid fa-book text-primary"></i><a class="nav-link d-none d-lg-block" >Tutorials</a>
+        </li>
+        <li class="nav-item d-flex justify-content-between align-items-center" [routerLink]="['/coachings']">
+          <i class="fa-sharp fa-solid fa-book-open-reader text-primary"></i><a class="nav-link d-none d-lg-block" >Coaching</a>
+        </li>
+        <li class="nav-item d-flex justify-content-between align-items-center" [routerLink]="['/user-details']" *ngIf="isLoggedIn()">
+          <i class="fa-solid fa-user-large d-md-none text-danger"></i>
+        </li>
+      </ul>
+    </div>
+      <div id="nabar-search">
+      <form class="d-flex flex-row"role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success me-0" type="submit">Search</button>
+      </form>
+      <ng-container *ngIf="!isLoggedIn()">
+        <button type="button"class="btn btn-primary d-none d-lg-inline ms-2" [routerLink]="['/register']">Sign Up</button>
+        <button type="button"class="btn btn-success ms-2 d-none d-md-inline" [routerLink]="['/login']">Sign In</button>
+      </ng-container>
+
+      <ng-container *ngIf="isLoggedIn()">
+        <button class="btn btn-danger ms-2 d-none d-md-inline px-3" [routerLink]="['/user-details']"><i class="fa-solid fa-user-large" *ngIf="isLoggedIn()"></i></button>
+        <button type="button"class="btn btn-primary ms-2 d-none d-md-inline" [routerLink]="['/login']" (click)="logout()">Logout</button>
+      </ng-container>
+    </div>
+
+  </div>
+</nav>
+
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']">LOGO</a>
+    <button class="navbar-toggler me-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item d-flex justify-content-between">
+          <ng-container *ngIf="isLoggedIn()">
+            <button type="button"class="btn btn-outline-primary d-sm-none me-0" [routerLink]="['/login']" (click)="logout()">Logout</button>
+            </ng-container>
+        </li>
+        <li class="nav-item d-flex justify-content-between align-items-center">
+          <i class="fa-solid fa-people-group text-primary"></i> <a class="nav-link d-flex align-items-center" [routerLink]="['/lfp']">Looking for Pal</a>
+        </li>
+        <li class="nav-item d-flex justify-content-between align-items-center">
+          <i class="fa-sharp fa-solid fa-book text-primary"></i><a class="nav-link" [routerLink]="['/tutorials']">Tutorials</a>
+        </li>
+        <li class="nav-item d-flex justify-content-between align-items-center">
+          <i class="fa-sharp fa-solid fa-book-open-reader text-primary"></i><a class="nav-link" [routerLink]="['/coachings']">Coaching</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success me-0" type="submit">Search</button>
+      </form>
+
+      <div class="navbar-list-right d-none d-lg-block">
+        <ng-container *ngIf="!isLoggedIn()">
+          <button type="button"class="btn btn-primary mx-2" [routerLink]="['/register']">Sign Up</button>
+          <button type="button"class="btn btn-success" [routerLink]="['/login']">Sign In</button>
+        </ng-container>
+        <ng-container *ngIf="isLoggedIn()">
+          <button type="button"class="btn btn-primary ms-2" [routerLink]="['/login']" (click)="logout()">Logout</button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</nav> -->
