@@ -1,3 +1,7 @@
+#post{
+  height: 100%;
+}
+
 #annuncio{
   margin-top: 20px;
   border: 1px solid gray;
@@ -9,7 +13,10 @@
 }
 h1,h2,h3,h4,h5,h6,p{
   word-wrap: break-word;
+}
 
+p,pre{
+  font-style: italic;
 }
 
 #buttons{
@@ -21,6 +28,15 @@ h1,h2,h3,h4,h5,h6,p{
   :last-child{
     margin-right: 0px;
   }
+}
+
+#username{
+  color: rgba(240, 3, 3, 0.712);
+  font-weight: bold;
+}
+#title{
+  color: rgba(2, 14, 124, 0.658);
+  font-weight: bold;
 }
 
 // SMARTPHONE

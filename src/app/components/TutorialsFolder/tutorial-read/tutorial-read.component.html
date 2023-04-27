@@ -1,16 +1,21 @@
-  <div class="d-flex justify-content-center" id="annuncio-container">
+  <div class="d-flex justify-content-center" id="annuncio-container" id="post">
     <div id="annuncio">
+      <h6>Author: <span id="username">{{tutorial.user?.username | titlecase}}</span></h6>
       <p class="m-0">Date: {{tutorial.creationDate | date: 'd/M/yy - h:mm a'}}</p>
-      <h5>{{tutorial.title}}</h5>
+      <h5 id="title">{{tutorial.title}}</h5>
       <p class="m-0" *ngIf="tutorial.creationDate != tutorial.lastModifyDate">Last Modify: {{tutorial.lastModifyDate | date: 'd/M/yy - h:mm a'}}</p>
       <hr>
-      <h5 *ngFor="let skill of tutorial.skills">{{skill}} </h5>
+      <p>Required skills</p>
+      <h6 *ngFor="let skill of tutorial.skills">{{skill}} </h6>
       <hr>
-      <p>{{tutorial.body}}</p>
+      <pre>{{tutorial.body}}</pre>
       <div id="buttons">
         <button type="button" class="btn btn-danger" (click)="deletePost()" *ngIf="!check()">Del</button>
         <button type="button" class="btn btn-warning" (click)="editPost()" *ngIf="!check()">Edit</button>
-        <button type="button" class="btn btn-success" *ngIf="check()">Rate it</button>
+        <ng-container *ngIf="check()">
+        <button type="button" class="btn btn-success" *ngIf="tutorialHasLike()" (click)=" toggleLikeUnlike()">Like</button>
+        <button type="button" class="btn btn-success" *ngIf="tutorialHasLike()" (click)=" toggleLikeUnlike()">Unlike</button>
+        </ng-container>
         <button type="button" class="btn btn-primary" [routerLink]="['/tutorials']">Back</button>
       </div>
     </div>

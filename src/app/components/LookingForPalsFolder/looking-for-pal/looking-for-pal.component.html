@@ -13,8 +13,8 @@
       <td>
         <div class="d-flex align-items-center" (click)="openPost(lfp)" id="post">
           <div>
-            <p id="title-paragraph"class="fw-bold mb-1">{{lfp.title}}</p>
-            <p class="text-muted mb-0">{{lfp.user.username}}</p>
+            <p id="title-paragraph"class="fw-bold mb-1">{{lfp.title | titlecase}}</p>
+            <p class="text-muted mb-0" id="username">{{lfp.user.username | titlecase}}</p>
           </div>
         </div>
       </td>

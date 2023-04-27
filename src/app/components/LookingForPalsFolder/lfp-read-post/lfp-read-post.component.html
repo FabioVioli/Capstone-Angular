@@ -1,18 +1,19 @@
-<div class="d-flex align-items-center flex-column">
+<div class="d-flex align-items-center flex-column justify-content-center" id="post">
   <div id="annuncio">
-    <h6 >{{lfp.user?.username}}</h6>
-    <p class="m-0">Date: {{lfp.creationDate | date: 'd/M/yy - h:mm a'}}</p>
-    <h5>{{lfp.title}}</h5>
+    <h6 >Author: <span id="username">{{lfp.user?.username | titlecase}}</span></h6>
+    <p class="m-0">Post Date: {{lfp.creationDate | date: 'd/M/yy - h:mm a'}}</p>
+    <h5 id="title">{{lfp.title | titlecase}}</h5>
     <p class="m-0" *ngIf="lfp.creationDate != lfp.lastModifyDate">Last Modify: {{lfp.lastModifyDate | date: 'd/M/yy - h:mm a'}}</p>
     <hr>
-    <h5 *ngFor="let skill of lfp.skills">{{skill}} </h5>
+    <p>Required skills</p>
+    <h6 *ngFor="let skill of lfp.skills">{{skill}} </h6>
     <hr>
-    <p>{{lfp.body}}</p>
+    <pre>{{lfp.body}}</pre>
     <div id="buttons">
     <button type="button" class="btn btn-danger" (click)="deletePost()" *ngIf="!check()">Del</button>
     <button type="button" class="btn btn-warning" (click)="editPost(lfp)" *ngIf="!check()">Edit</button>
     <button type="button" class="btn btn-success" *ngIf="checkStatus()" (click)="openModal()">DM</button>
-    <button type="button" class="btn btn-primary" [routerLink]="['/lfp']">Back</button>
+    <button type="button" class="btn btn-primary" [routerLink]="['/lfp']" >Back</button>
     </div>
   </div>
 </div>

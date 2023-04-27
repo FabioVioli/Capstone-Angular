@@ -28,9 +28,9 @@ export class lfpReadPostComponent implements OnInit{
   ngOnInit(): void {
 
     this.lfp = this.lfpService.getLFPById(this.id).subscribe(
-      (e) => {this.lfp = e},(error) =>{
-        this.router.navigate(["/lfp"])
+      (e) => {this.lfp = e},(e) =>{ this.lfp.body = JSON.stringify(e.body)
       })
+
     }
 
     checkDM(){

@@ -23,4 +23,16 @@ export class UserService {
   getUserLFPs (username:string): Observable<DMJava[]>{
     return this.http.get<DMJava[]> (`${this.URL}/dm/${username}`, {headers: this.httpOptions})
   }
+
+  // CHECK IF A TUTORIAL HAS LIKE
+  checkIfTutorialHasLike(username:string, tutorialId:number){
+    return this.http.get (`${this.URL}/likes/${username}/${tutorialId}`, {headers: this.httpOptions})
+  }
+
+  // TUTORIAL TOGGLE LIKE / UNLIKE
+  toggleLikeUnlike(username:string, tutorialId:number){
+    console.log(username, tutorialId);
+
+    return this.http.get (`${this.URL}/togglelikes/${username}/${tutorialId}`, {headers: this.httpOptions})
+  }
 }

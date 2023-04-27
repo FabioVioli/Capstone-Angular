@@ -14,6 +14,12 @@
 #title-paragraph {
   max-width: 100%;
   overflow-wrap: break-word;
+  color: rgba(2, 14, 124, 0.658);
+  font-size: 1.1em;
+}
+
+#username {
+  font-style: italic;
 }
 
 td {
@@ -42,7 +48,7 @@ tr {
   #userBar {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: flex-end;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -52,6 +58,6 @@ tr {
   #userBar {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: flex-end;
   }
 }/*# sourceMappingURL=looking-for-pal.component.css.map */

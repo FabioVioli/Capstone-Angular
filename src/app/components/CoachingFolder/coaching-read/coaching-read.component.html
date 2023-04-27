@@ -1,13 +1,14 @@
-<div class="d-flex align-items-center flex-column">
+<div class="d-flex align-items-center flex-column" id="post">
   <div id="annuncio">
-    <h6 >{{coaching.user?.username}}</h6>
+    <h6 >Author: <span id="username">{{coaching.user?.username | titlecase}}</span></h6>
     <p class="m-0">Date: {{coaching.creationDate | date: 'd/M/yy - h:mm a'}}</p>
-    <h5>{{coaching.title}}</h5>
+    <h5 id="title">{{coaching.title | titlecase}}</h5>
     <p class="m-0" *ngIf="coaching.creationDate != coaching.lastModifyDate">Last Modify: {{coaching.lastModifyDate | date: 'd/M/yy - h:mm a'}}</p>
     <hr>
-    <h5 *ngFor="let skill of coaching.skills">{{skill}} </h5>
+    <p>Required skills</p>
+    <h6 *ngFor="let skill of coaching.skills">{{skill}} </h6>
     <hr>
-    <p>{{coaching.body}}</p>
+    <pre>{{coaching.body}}</pre>
     <div id="buttons">
     <button type="button" class="btn btn-danger" (click)="deletePost()" *ngIf="!check()">Del</button>
     <button type="button" class="btn btn-warning" (click)="editPost()" *ngIf="!check()">Edit</button>

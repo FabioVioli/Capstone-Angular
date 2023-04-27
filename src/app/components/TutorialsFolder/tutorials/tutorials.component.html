@@ -13,8 +13,8 @@
         <td>
           <div class="d-flex align-items-center" (click)="openPost(tutorial.id)" id="post">
             <div>
-              <p id="title-paragraph" class="fw-bold mb-1">{{tutorial.title}}</p>
-              <p class="text-muted mb-0">{{tutorial.user.username}}</p>
+              <p id="title-paragraph" class="fw-bold mb-1">{{tutorial.title | titlecase}}</p>
+              <p class="text-muted mb-0" id="username">{{tutorial.user.username | titlecase}}</p>
             </div>
           </div>
         </td>
